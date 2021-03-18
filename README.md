@@ -2,4 +2,4 @@
 WORK IN PROGRESS!
 
 ### Requirements
-* SDL v. x.x.x : https://www.libsdl.org/download-2.0.php
+* SDL v. 2.0.14 : https://www.libsdl.org/download-2.0.php
