@@ -11,7 +11,7 @@ public:
 	void draw() const;
 
 private:
-	int m_x, m_y;
-	int m_w, m_h;
-	int m_R, m_G, m_B, m_A;
+	int m_x, m_y; // drawing pos
+	int m_w, m_h; // width & height of drawn rect
+	int m_R, m_G, m_B, m_A; // color in RGBA
 };

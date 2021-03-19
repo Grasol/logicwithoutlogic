@@ -1,0 +1,32 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",                                    // WORK IN PROGRESS
+			"label": "g++ compile active file",
+			"command": "C:\\MinGW\\bin\\g++.exe",
+			"args": [
+				"-g",
+				"${file}",
+				"-o",
+				"${fileDirname}\\${fileBasenameNoExtension}.exe"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "kompilator: C:\\MinGW\\bin\\g++.exe"
+		},
+		{
+			"type": "shell",
+			"label": "test: root folder",
+			"command": "echo ${workspaceFolder}"
+		}
+	]
+}
