@@ -1,5 +1,5 @@
-#include "../engine/window.h"
-#include "../engine/renderer.h"
+#include "window.h"
+#include "renderer.h"
 
 // Window properties
 int g_window_width = 1000;
