@@ -2,14 +2,32 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"type": "cppbuild",                                    // WORK IN PROGRESS
-			"label": "g++ compile active file",
-			"command": "C:\\MinGW\\bin\\g++.exe",
+			"type":"shell",
+			"label": "test",
+			"command": "echo ${workspaceFolder}"
+		},
+		{
+			// BUILDING PROJECT
+			"type": "cppbuild",                                    // creates an executable
+			"label": "compile project",
+			"command": "g++",
 			"args": [
-				"-g",
-				"${file}",
-				"-o",
-				"${fileDirname}\\${fileBasenameNoExtension}.exe"
+				"-g", "${workspaceFolder}\\bin\\main.o",
+					  "${workspaceFolder}\\bin\\controls.o",
+				      "${workspaceFolder}\\bin\\renderer.o",
+				      "${workspaceFolder}\\bin\\window.o",
+
+				"-o", "${workspaceFolder}\\bin\\ProjectLnL_new.exe",
+
+				"-Wextra", "-Wall", "-O3",
+
+				"-I${workspaceFolder}\\deps\\include",
+
+				"-L${workspaceFolder}\\deps\\lib\\SDL2",
+
+				"-lmingw32", "-lSDL2main", "-lSDL2",
+
+				"-std=c++11", "-mwindows", "-Wl,-subsystem,windows"
 			],
 			"options": {
 				"cwd": "${workspaceFolder}"
@@ -17,16 +35,122 @@
 			"problemMatcher": [
 				"$gcc"
 			],
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			},
+			"group": "build",
 			"detail": "kompilator: C:\\MinGW\\bin\\g++.exe"
 		},
 		{
-			"type": "shell",
-			"label": "test: root folder",
-			"command": "echo ${workspaceFolder}"
+			// BUILDING SOURCE CODE IN APP
+			"type": "cppbuild",                                    // compiles main.cpp
+			"label": "compile main.cpp",
+			"command": "g++",
+			"args": [
+				"-c", "${workspaceFolder}\\src\\app\\main.cpp",
+
+				"-o", "${workspaceFolder}\\bin\\main.o",
+
+				"-Wextra", "-Wall", "-O3",
+
+				"-I${workspaceFolder}\\deps\\include",
+
+				"-L${workspaceFolder}\\deps\\lib\\SDL2",
+
+				"-lmingw32", "-lSDL2main", "-lSDL2",
+
+				"-std=c++11"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "kompilator: C:\\MinGW\\bin\\g++.exe"
+		},
+		{
+			"type": "cppbuild",                                    // compiles controls.cpp
+			"label": "compile controls.cpp",
+			"command": "g++",
+			"args": [
+				"-c", "${workspaceFolder}\\src\\app\\controls.cpp",
+
+				"-o", "${workspaceFolder}\\bin\\controls.o",
+
+				"-Wextra", "-Wall", "-O3",
+
+				"-I${workspaceFolder}\\deps\\include",
+
+				"-L${workspaceFolder}\\deps\\lib\\SDL2",
+
+				"-lmingw32", "-lSDL2main", "-lSDL2",
+
+				"-std=c++11"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "kompilator: C:\\MinGW\\bin\\g++.exe"
+		},
+		{
+			// BUILDING SOURCE CODE IN ENGINE
+			"type": "cppbuild",                                    // compiles window.cpp
+			"label": "compile window.cpp",
+			"command": "g++",
+			"args": [
+				"-c", "${workspaceFolder}\\src\\engine\\window.cpp",
+
+				"-o", "${workspaceFolder}\\bin\\window.o",
+
+				"-Wextra", "-Wall", "-O3",
+
+				"-I${workspaceFolder}\\deps\\include",
+
+				"-L${workspaceFolder}\\deps\\lib\\SDL2",
+
+				"-lmingw32", "-lSDL2main", "-lSDL2",
+
+				"-std=c++11"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "kompilator: C:\\MinGW\\bin\\g++.exe"
+		},
+		{
+			"type": "cppbuild",                                    // compiles renderer.cpp
+			"label": "compile renderer.cpp",
+			"command": "g++",
+			"args": [
+				"-c", "${workspaceFolder}\\src\\engine\\renderer.cpp",
+
+				"-o", "${workspaceFolder}\\bin\\renderer.o",
+
+				"-Wextra", "-Wall", "-O3",
+
+				"-I${workspaceFolder}\\deps\\include",
+
+				"-L${workspaceFolder}\\deps\\lib\\SDL2",
+
+				"-lmingw32", "-lSDL2main", "-lSDL2",
+
+				"-std=c++11"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "kompilator: C:\\MinGW\\bin\\g++.exe"
 		}
 	]
 }

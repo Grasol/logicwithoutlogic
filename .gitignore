@@ -84,4 +84,6 @@ GitHub.sublime-settings
 # End of https://www.toptal.com/developers/gitignore/api/c++,vscode,sublimetext
 
 ### dependencies exlcude ###
+deps/include/SDL2/*
 deps/lib/*
+bin/*

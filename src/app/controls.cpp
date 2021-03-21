@@ -1,5 +1,6 @@
-#include "..\Engine\window.h"
+#include "window.h"
 
+// Module to create controls
 void keyPressed(Window* window, SDL_Keycode key)
 {	
 	switch (key)
